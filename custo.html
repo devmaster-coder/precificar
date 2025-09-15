@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Custo de Produção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧮 Custo de Produção</h1>
+
+    <div id="itens"></div>
+    <button onclick="adicionarItem()">➕ Adicionar Componente</button>
+    <button onclick="calcularCusto()">💾 Salvar e Voltar</button>
+  </div>
+
+  <script>
+    function adicionarItem() {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+        <input type="text" placeholder="Nome">
+        <input type="number" placeholder="Valor (R$)" step="0.01">
+      `;
+      document.getElementById('itens').appendChild(div);
+    }
+    
+    function calcularCusto() {
+      const itens = document.querySelectorAll('.item');
+      let total = 0;
+      itens.forEach(item => {
+        const valor = parseFloat(item.children[1].value) || 0;
+        total += valor;
+      });
+      localStorage.setItem('custoProducao', total.toFixed(2));
+      window.location.href = "/precificar/index_prec.html";
+    }
+  </script>
+</body>
+</html>

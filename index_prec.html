@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Preço</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💼 Calculadora de Preço Final</h1>
+
+    <section class="info">
+      <h2>💡 Por que precificar corretamente?</h2>
+      <p>
+        Saber precificar corretamente seu produto ou serviço é essencial para garantir a saúde financeira do seu negócio.
+        Uma boa formação de preço considera os custos de produção, impostos, margem de lucro e posicionamento no mercado.
+        <br><br>
+        Embora esta ferramenta ajude você a entender melhor seus números, é altamente recomendável buscar o apoio de um contador
+        para validar suas estratégias e garantir conformidade fiscal.
+      </p>
+    </section>
+
+    <label>Nome do Produto/Serviço:</label>
+    <input type="text" id="nome">
+
+    <label>Custo Base (R$):</label>
+    <input type="number" id="custoBase">
+
+    <label>Impostos (%):</label>
+    <input type="number" id="impostos">
+
+    <label>Margem de Lucro (%):</label>
+    <input type="number" id="lucro">
+
+    <button onclick="calcular()">Calcular Preço Final</button>
+    <button onclick="irParaCusto()">Calcular Custo de Produção</button>
+    <button onclick="salvar()">Salvar</button>
+    <button onclick="paginaInicial()">Página Inicial</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
